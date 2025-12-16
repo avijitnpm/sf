@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Securafill</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="nav-logo">
+                    <img src="logo1.png" alt="Securafill Logo" width="32" height="32">
+                </div>
+                <span>Securafill</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#how-it-works">How it Works</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <a href="index.html" class="nav-cta" style="text-decoration: none;">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Thank You Section -->
+    <section class="thankyou">
+        <div class="container">
+            <div class="thankyou-content">
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" stroke="#0066FF" stroke-width="4" />
+                        <path d="M25 40L35 50L55 30" stroke="#0066FF" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <h1 class="thankyou-title">You're on the Waitlist!</h1>
+                <p class="thankyou-subtitle">Thank you for joining the Securafill waitlist. We're excited to have you on
+                    board!</p>
+
+                <div class="next-steps">
+                    <h3>What happens next?</h3>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Check your email</h4>
+                                <p>We've sent a confirmation email with your waitlist position.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Get early access</h4>
+                                <p>You'll be among the first to know when we launch.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Exclusive benefits</h4>
+                                <p>Enjoy special pricing and priority onboarding as an early member.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="index.html" class="btn-primary">Learn More About Securafill</a>
+                    <a href="mailto:hello@securafill.com" class="btn-secondary">Contact Us</a>
+                </div>
+
+                <div class="social-proof">
+                    <p>Join <strong>500+</strong> professionals already waiting for Securafill</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="8" fill="#0066FF" />
+                            <path d="M8 16L12 20L24 8" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Securafill</span>
+                    </div>
+                    <p>Automated ESG & compliance reports for modern businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pricing">Pricing</a>
+                        <a href="index.html#how-it-works">How it Works</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#careers">Careers</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="index.html#privacy">Privacy Policy</a>
+                        <a href="index.html#terms">Terms of Service</a>
+                        <a href="index.html#compliance">Compliance</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securafill. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Thank You Page Specific Styles */
+        .thankyou {
+            padding: 140px 20px 100px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .thankyou-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .success-icon {
+            margin-bottom: 2rem;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes successPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .thankyou-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .thankyou-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        .next-steps {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--medium-gray);
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons .btn-primary,
+        .action-buttons .btn-secondary {
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .social-proof {
+            padding: 1.5rem;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .social-proof p {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .thankyou {
+                padding: 120px 16px 80px;
+            }
+
+            .thankyou-title {
+                font-size: 2.5rem;
+            }
+
+            .thankyou-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .next-steps {
+                padding: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .action-buttons .btn-primary,
+            .action-buttons .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thankyou-title {
+                font-size: 2rem;
+            }
+
+            .next-steps {
+                padding: 1.5rem;
+            }
+
+            .step-item {
+                gap: 0.75rem;
+            }
+
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate elements on scroll/load
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll(
+                '.success-icon, .thankyou-title, .thankyou-subtitle, .next-steps, .action-buttons, .social-proof'
+            );
+
+            animatedElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(el);
+            });
+
+            // Add hover effects to buttons
+            document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-2px)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
