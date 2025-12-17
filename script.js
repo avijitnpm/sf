@@ -167,16 +167,7 @@ window.addEventListener('resize', throttle(() => {
     addMobileMenuButton();
 }, 250));
 
-// Button hover effects
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-2px)';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
+// Remove button hover animations
 
 // Form interactions (for future forms)
 const handleFormFocus = (input) => {
@@ -191,40 +182,9 @@ const handleFormFocus = (input) => {
     });
 };
 
-// Add loading states for buttons
-document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
-    button.addEventListener('click', function(e) {
-        if (!this.classList.contains('loading')) {
-            e.preventDefault();
-            
-            const originalText = this.textContent;
-            this.classList.add('loading');
-            this.innerHTML = `
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="animation: spin 1s linear infinite;">
-                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416"/>
-                </svg>
-                Loading...
-            `;
-            this.disabled = true;
-            
-            // Simulate loading
-            setTimeout(() => {
-                this.classList.remove('loading');
-                this.textContent = originalText;
-                this.disabled = false;
-            }, 2000);
-        }
-    });
-});
+// Remove button loading animations - not needed
 
-// Add CSS animation for spinner
-const spinnerStyle = document.createElement('style');
-spinnerStyle.textContent = `
-    @keyframes spin {
-        to { stroke-dashoffset: 0; }
-    }
-`;
-document.head.appendChild(spinnerStyle);
+// Remove spinner animation CSS
 
 // Smooth reveal for section titles
 document.querySelectorAll('.section-title').forEach(title => {
@@ -244,16 +204,7 @@ document.querySelectorAll('.section-title').forEach(title => {
     titleObserver.observe(title);
 });
 
-// Add hover effect for cards
-document.querySelectorAll('.feature-card, .testimonial-card, .pricing-card, .report-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
+// Remove card hover animations
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {

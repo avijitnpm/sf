@@ -42,7 +42,10 @@
                         & compliance reporting.</p>
                 </div>
 
-                <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
+                <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+                    action="/thankyou.html">
+                    <input type="hidden" name="form-name" value="waitlist" />
+                    <input type="hidden" name="bot-field" />
                     <div class="waitlist-form" id="waitlistForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -60,20 +63,13 @@
                         </div>
 
                         <button type="submit" class="btn-primary waitlist-btn" id="submitBtn">
-                            <span class="btn-text">Join Waitlist</span>
-                            <span class="btn-loading" style="display: none;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    style="animation: spin 1s linear infinite;">
-                                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none"
-                                        stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416" />
-                                </svg>
-                                Processing...
-                            </span>
+                            Join Waitlist
                         </button>
 
                         <div class="form-note">
                             <p>We respect your privacy. Unsubscribe at any time.</p>
                         </div>
+                    </div>
                 </form>
 
                 <div class="waitlist-benefits">
@@ -288,11 +284,7 @@
             font-weight: 500;
         }
 
-        @keyframes spin {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -329,46 +321,30 @@
     </style>
 
     <script>
-        // Google Form Configuration - REPLACE THESE VALUES
-        const GOOGLE_FORM_ID = '1rzS2uw2dwNLsjWT1OceNG-tr3tgxmkhXw_OTOovhF-Q';
-        const NAME_FIELD_ID = '1638622698';
-        const EMAIL_FIELD_ID = '698740350';
-        const COMPANY_FIELD_ID = 142612607;
-
         document.getElementById('waitlistForm').addEventListener('submit', async function (e) {
             e.preventDefault();
+            const form = this;
 
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
+            // Validate form
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
 
-            // Show loading state
-            submitBtn.disabled = true;
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline-flex';
+            if (!name || !email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
 
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const company = formData.get('company');
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
 
             try {
-                // Submit to Google Form
-                const url = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
-                const params = new URLSearchParams();
-
-                params.append(`entry.${NAME_FIELD_ID}`, name);
-                params.append(`entry.${EMAIL_FIELD_ID}`, email);
-                if (company) {
-                    params.append(`entry.${COMPANY_FIELD_ID}`, company);
-                }
-
-                // Create and submit the form
-                await fetch(url, {
+                // Submit to Netlify Forms
+                await fetch('/', {
                     method: 'POST',
-                    mode: 'no-cors',
-                    body: params
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
                 });
 
                 // Redirect to thank you page
@@ -376,11 +352,15 @@
 
             } catch (error) {
                 console.error('Error submitting form:', error);
-
-                // Fallback: still redirect to thank you page (Google Forms often works despite CORS errors)
-                window.location.href = 'thankyou.html';
+                alert('Form submission will work when deployed to Netlify.');
             }
         });
+
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
 
         // Add input focus effects
         document.querySelectorAll('.form-group input').forEach(input => {
